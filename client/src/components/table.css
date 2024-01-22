@@ -34,3 +34,15 @@ td{
   text-align: center;
   cursor: pointer;
 }
+
+.table_container{
+  margin-bottom: 100px;
+}
+
+.footer_sec{
+  margin: 15px auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  
+}

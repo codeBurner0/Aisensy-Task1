@@ -44,7 +44,7 @@ export const BasicTable = ({}) => {
 
   const{pageSize,pageIndex}=state
   return (
-    <>
+    <div className='table_container'>
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -69,16 +69,19 @@ export const BasicTable = ({}) => {
         </tbody>
        
       </table>
-      <div>
-        <select value={pageSize} onChange={(e)=>setPageSize(e.target.value)}>
+      <div className='footer_sec'>
+        PageSize:<select value={pageSize} onChange={(e)=>setPageSize(e.target.value)}>
           <option value="10">10</option>
           <option value="20">20</option>
           <option value="50">50</option>
         </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <span>Page{' '} <strong>{pageIndex+1} of {pageOptions.length}</strong></span>
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <button onClick={()=>previousPage()} disabled={!canPreviousPage}>Prev</button>
+        &nbsp;&nbsp;
         <button onClick={()=>nextPage()} disabled={!canNextPage}>Next</button>
       </div>
-    </>
+    </div>
   )
 }
